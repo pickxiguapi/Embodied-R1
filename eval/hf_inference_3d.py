@@ -129,7 +129,7 @@ def parse_points_from_output(output):
 
 def process_sample(sample, model, processor, device, reasoning_model, instruct_following, gen_args):
     image_path = sample["images"][0].replace("\\", "/")
-    base_path = "/mnt/kaiwu-group-x4/iffyuan/all-seeing/all-seeing-v2/process_rl_data"
+    base_path = "/mnt/path/iffyuan/all-seeing/all-seeing-v2/process_rl_data"
     abs_image_path = os.path.join(base_path, image_path)
 
     with open(abs_image_path, "rb") as image_file:
@@ -345,8 +345,8 @@ def main(task_name, model_name, model_path, reasoning_model, max_pixels, min_pix
 if __name__ == "__main__":
     task_name = "Open6dor-Custom"
     model_name = "Embodied-R1-3B-2D"
-    model_path = "/mnt/kaiwu-group-x4/iffyuan/EasyR1/workdir/stage_2_point_rec_embodiedr1_qwen2_5_vl_3b_version_reward_v6_date_0503/global_step_784/actor/huggingface"
-    dataset_path = "/mnt/kaiwu-group-x4/iffyuan/all-seeing/all-seeing-v2/process_rl_data/3d_dataset.json"
+    model_path = "/mnt/path/iffyuan/EasyR1/workdir/stage_2_point_rec_embodiedr1_qwen2_5_vl_3b_version_reward_v6_date_0503/global_step_784/actor/huggingface"
+    dataset_path = "/mnt/path/iffyuan/all-seeing/all-seeing-v2/process_rl_data/3d_dataset.json"
     reasoning_model = True
     use_flash_attention = False
 

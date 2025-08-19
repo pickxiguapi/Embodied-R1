@@ -195,7 +195,7 @@ def main(task_name, model_name, model_path, reasoning_model, max_pixels, min_pix
 if __name__ == "__main__":
     task_name = "EmbSpatialBench"
     model_name = "Embodied-R1-3B"
-    model_path = "/mnt/kaiwu-group-x4/iffyuan/EasyR1/workdir/embodiedr1_qwen2_5_vl_3b_version_reward_v5_data_exp_date_0428_stage_1_qa/global_step_394/actor/huggingface"
+    model_path = "/mnt/path/iffyuan/EasyR1/workdir/embodiedr1_qwen2_5_vl_3b_version_reward_v5_data_exp_date_0428_stage_1_qa/global_step_394/actor/huggingface"
     reasoning_model = True
 
     max_pixels = 1605632

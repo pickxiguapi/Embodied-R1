@@ -278,8 +278,8 @@ if __name__ == "__main__":
     use_flash_attention = False
 
     model_name = "Embodied-R1-3B"
-    model_path = "/mnt/kaiwu-group-x4/iffyuan/EasyR1/workdir/stage_2_embodiedr1_qwen2_5_vl_3b_version_reward_v7_date_0515/global_step_2064/actor/huggingface"
-    dataset_path = "/mnt/kaiwu-group-x4/iffyuan/all-seeing/all-seeing-v2/process_rl_data/FSD_points_rft_fsd_free_point_train_32790_test_300_0425/test.parquet"
+    model_path = "/mnt/path/iffyuan/EasyR1/workdir/stage_2_embodiedr1_qwen2_5_vl_3b_version_reward_v7_date_0515/global_step_2064/actor/huggingface"
+    dataset_path = "/mnt/path/iffyuan/all-seeing/all-seeing-v2/process_rl_data/FSD_points_rft_fsd_free_point_train_32790_test_300_0425/test.parquet"
     reasoning_model = True
     
     vis_dir = f"logs/visualizations/{task_name}_{model_name}"
