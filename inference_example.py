@@ -300,7 +300,6 @@ def generate_response(model, processor, messages):
             do_sample=False
         )
     
-    # 解码生成的文本
     generated_text = processor.batch_decode(
         generated_ids[:, inputs['input_ids'].shape[1]:], 
         skip_special_tokens=True, 
@@ -315,7 +314,7 @@ def process_single_example(model, processor, example, base_image_dir="", output_
     try:
         image = Image.open(image_path).convert("RGB")
     except Exception as e:
-        print(f"无法加载图像 {image_path}: {e}")
+        print(f"Fail to load image {image_path}: {e}")
         return None
     
 
@@ -338,14 +337,14 @@ def process_single_example(model, processor, example, base_image_dir="", output_
         ]
     }]
     
-    print(f"处理示例: {example['image']}")
-    print(f"模式: {mode}")
-    print(f"指令: {text}")
+    print(f"Processing example: {example['image']}")
+    print(f"Mode: {mode}")
+    print(f"Instruction: {text}")
     
 
     try:
         response = generate_response(model, processor, messages)
-        print(f"模型响应: {response}")
+        print(f"Model response: {response}")
         
 
         think_content, answer_content, coordinates = _extract_model_output_parts(response)
@@ -359,7 +358,7 @@ def process_single_example(model, processor, example, base_image_dir="", output_
             image_name = os.path.splitext(os.path.basename(example["image"]))[0]
             visual_image_path = os.path.join(output_dir, f"{image_name}_visualized.png")
             visual_image.save(visual_image_path)
-            print(f"可视化图像已保存: {visual_image_path}")
+            print(f"Visualization image saved: {visual_image_path}")
         
 
         return {
@@ -373,12 +372,10 @@ def process_single_example(model, processor, example, base_image_dir="", output_
             "visual_image_path": visual_image_path if coordinates else None
         }
     except Exception as e:
-        print(f"处理示例时出错: {e}")
+        print(f"Error processing example: {e}")
         return None
 
 def main():
-
-
     checkpoint_path = DEFAULT_CKPT_PATH
     cpu_only = False
     flash_attn2 = False
@@ -388,13 +385,13 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
     
 
-    print("正在加载模型和处理器...")
+    print("Loading model and processor...")
     model, processor = _load_model_processor(checkpoint_path, cpu_only, flash_attn2)
-    print("模型加载完成")
+    print("Model loaded successfully")
     
     results = []
     for i, example in enumerate(EXAMPLE):
-        print(f"\n处理示例 {i+1}/{len(EXAMPLE)}")
+        print(f"\nProcessing example {i+1}/{len(EXAMPLE)}")
         result = process_single_example(model, processor, example, base_image_dir, output_dir)
         if result:
             results.append(result)
@@ -404,7 +401,7 @@ def main():
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     
-    print(f"\n处理完成! 结果已保存到 {output_file}")
+    print(f"\nProcessing completed! Results saved to: {output_file}")
     
 
 if __name__ == '__main__':
