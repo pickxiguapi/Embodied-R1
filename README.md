@@ -108,9 +108,9 @@ Task instruction: bring me the camel model
 
 
 
-### OAG Example
+### OFG Example
 
-Task instruction: Move the yellow block in the middle of the table.
+Task instruction: loosening stuck bolts
 
 **Before prediction (original image):**
 
