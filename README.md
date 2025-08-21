@@ -4,7 +4,7 @@
 
 **Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation**
 
-[[🌐 Website](https://embodied-r1.github.io)] [[📄 Paper](#paper)] [[🤗 Models](https://huggingface.co/collections/IffYuan/embodied-r1-684a8474b3a49210995f9081)] [[🎯 Datasets](https://huggingface.co/collections/IffYuan/embodied-r1-684a8474b3a49210995f9081)] [[💬 Demo](#demo)]
+[[🌐 Website](https://embodied-r1.github.io)] [[📄 Paper](http://arxiv.org/abs/2508.13998)] [[🤗 Models](https://huggingface.co/collections/IffYuan/embodied-r1-684a8474b3a49210995f9081)] [[🎯 Datasets](https://huggingface.co/collections/IffYuan/embodied-r1-684a8474b3a49210995f9081)] [[💬 Demo](#demo)]
 
 </div>
 
@@ -30,11 +30,12 @@
 ## 🛠️ Setup
 
 1.  **Clone the repository**:
+    
     ```bash
     git clone https://github.com/pickxiguapi/Embodied-R1.git
     cd Embodied-R1
     ```
-
+    
 2.  **Create and activate Conda environment**:
     ```bash
     conda create -n embodied_r1 python=3.11 -y
@@ -54,7 +55,70 @@
 
 ---
 
-## 🚀 Inference - Coming Soon
+## 🚀 Inference
+
+**Run the example code:**
+
+~~~python
+cd Embodied-R1/
+python inference_example.py
+~~~
+
+### VTG Example
+
+Task instruction: put the red block on top of the yellow block
+
+**Before prediction (original image):**
+
+<img src="assets/put the red block on top of the yellow block.png" width="400" alt="Original input image">
+
+**After prediction (visualization result):**
+
+<img src="assets/put the red block on top of the yellow block_visualized.png" width="400" alt="Visualization result with predicted points">
+
+
+
+### RRG Example
+
+Task instruction: put pepper in pan
+
+**Before prediction (original image):**
+
+<img src="assets/put pepper in pan.png" width="400" alt="Original input image">
+
+**After prediction (visualization result):**
+
+<img src="assets/put pepper in pan_visualized.png" width="400" alt="Visualization result with predicted points">
+
+
+
+### REG Example
+
+Task instruction: bring me the camel model
+
+**Before prediction (original image):**
+
+<img src="assets/roborefit_18992.png" width="400" alt="Original input image">
+
+**After prediction (visualization result):**
+
+<img src="assets/roborefit_18992_visualized.png" width="400" alt="Visualization result with predicted points">
+
+
+
+### OAG Example
+
+Task instruction: Move the yellow block in the middle of the table.
+
+**Before prediction (original image):**
+
+<img src="assets/handal_090002.png" width="400" alt="Original input image">
+
+**After prediction (visualization result):**
+
+<img src="assets/handal_090002_visualized.png" width="400" alt="Visualization result with predicted points">
+
+
 
 
 
@@ -69,7 +133,7 @@ python hf_inference_vabench_point.py
 ...
 ```
 
-## 🧠 Training - Coming Soon
+## 🧠 Training
 
 We plan to release the complete training code, datasets, and detailed guidelines soon. Stay tuned!
 
