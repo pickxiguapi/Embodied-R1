@@ -12,6 +12,8 @@
 
 ## 🔥 Updates
 
+- **[2025-08-21]** 🎉 **Inference Scripts Released!** We have released our inference prompts and scripts for embodied pointing abilities. 
+  
 - **[2025-08-20]** 🎉 **Models and Datasets Released!** We have released our pre-trained models, training datasets, and comprehensive evaluation benchmarks. Check out our [HuggingFace collection](https://huggingface.co/collections/IffYuan/embodied-r1-684a8474b3a49210995f9081) for all available resources.
 
 - **[Coming Soon]** 📚 Complete training code and detailed training tutorials will be released soon. Stay tuned!
