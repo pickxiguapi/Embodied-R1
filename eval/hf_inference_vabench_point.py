@@ -278,7 +278,7 @@ if __name__ == "__main__":
     use_flash_attention = False
 
     model_name = "Embodied-R1-3B"
-    model_path = "/mnt/path/iffyuan/EasyR1/workdir/stage_2_embodiedr1_qwen2_5_vl_3b_version_reward_v7_date_0515/global_step_2064/actor/huggingface"
+    model_path = "IffYuan/Embodied-R1-3B-v1"
     dataset_path = "/mnt/path/iffyuan/all-seeing/all-seeing-v2/process_rl_data/FSD_points_rft_fsd_free_point_train_32790_test_300_0425/test.parquet"
     reasoning_model = True
     
@@ -304,7 +304,7 @@ if __name__ == "__main__":
         )
     else:
         instruct_following = "Use 2D points to mark the region mentioned in the task with format <point>[[x1, y1], [x2, y2], ...]</point>."
-    
+    os.makedirs('logs', exist_ok=True)
     current_time = time.strftime("%Y%m%d_%H%M%S")
     log_file_name = f"logs/inference_{task_name}_{model_name}_{current_time}.log"
     logging.basicConfig(

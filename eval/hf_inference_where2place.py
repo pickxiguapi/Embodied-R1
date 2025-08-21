@@ -106,7 +106,7 @@ def visualize_mask_and_points(image, mask, points, save_path):
     return save_path
 
 
-def process_sample(sample, model, processor, device, reasoning_model, instruct_following, gen_args, vis_dir, disable_visualization=True):
+def process_sample(sample, model, processor, device, reasoning_model, instruct_following, gen_args, vis_dir, disable_visualization=True,vis_path=None):
     question = sample['question']
     question = question + '\n' + instruct_following
     question = textwrap.dedent(question).strip()
@@ -285,7 +285,7 @@ if __name__ == "__main__":
     use_flash_attention = False
 
     model_name = "Embodied-R1-3B"
-    model_path = "/mnt/path/iffyuan/EasyR1/workdir/stage_2_embodiedr1_qwen2_5_vl_3b_version_reward_v7_date_0515/global_step_2064/actor/huggingface"
+    model_path = "IffYuan/Embodied-R1-3B-v1"
     reasoning_model = True
     
     vis_dir = f"logs/visualizations/{task_name}_{model_name}"

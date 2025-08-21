@@ -345,8 +345,8 @@ def main(task_name, model_name, model_path, reasoning_model, max_pixels, min_pix
 if __name__ == "__main__":
     task_name = "Open6dor-Custom"
     model_name = "Embodied-R1-3B-2D"
-    model_path = "/mnt/path/iffyuan/EasyR1/workdir/stage_2_point_rec_embodiedr1_qwen2_5_vl_3b_version_reward_v6_date_0503/global_step_784/actor/huggingface"
-    dataset_path = "/mnt/path/iffyuan/all-seeing/all-seeing-v2/process_rl_data/3d_dataset.json"
+    model_path = "IffYuan/Embodied-R1-3B-v1"
+    dataset_path = "3d_dataset.json"
     reasoning_model = True
     use_flash_attention = False
 
@@ -371,6 +371,7 @@ if __name__ == "__main__":
         instruct_following = "Use 2D points to mark the region mentioned in the task with format <point>[[x1, y1], [x2, y2], ...]</point>."
 
     current_time = time.strftime("%Y%m%d_%H%M%S")
+    os.makedirs('logs', exist_ok=True)
     log_file_name = f"logs/inference_{task_name}_{model_name}_{current_time}.log"
     logging.basicConfig(
         level=logging.INFO,

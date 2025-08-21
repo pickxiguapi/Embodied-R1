@@ -226,7 +226,7 @@ if __name__ == "__main__":
     dataset_path = ["path/to/crpe_relation.jsonl"]
 
     model_name = "Embodied-R1-3B"
-    model_path = "path/to/model"
+    model_path = "IffYuan/Embodied-R1-3B-v1"
     reasoning_model = True
 
     max_pixels = 1605632
@@ -248,6 +248,7 @@ if __name__ == "__main__":
         )
     else:
         instruct_following = "Directly output the option (A), (B), (C) or (D)."
+    os.makedirs('logs', exist_ok=True)
     log_file_name = f"inference_{task_name}_{model_name}.log"
     logging.basicConfig(
         level=logging.INFO,

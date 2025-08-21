@@ -125,7 +125,7 @@ def main(task_name, model_name, model_path, reasoning_model, max_pixels, min_pix
         model_path,
         torch_dtype=torch.bfloat16,
         device_map=device_map,
-        attn_implementation="flash_attention_2",
+        attn_implementation=None,
     )
     
     processor = AutoProcessor.from_pretrained(model_path, max_pixels=max_pixels, min_pixels=min_pixels)
@@ -195,7 +195,7 @@ def main(task_name, model_name, model_path, reasoning_model, max_pixels, min_pix
 if __name__ == "__main__":
     task_name = "EmbSpatialBench"
     model_name = "Embodied-R1-3B"
-    model_path = "/mnt/path/iffyuan/EasyR1/workdir/embodiedr1_qwen2_5_vl_3b_version_reward_v5_data_exp_date_0428_stage_1_qa/global_step_394/actor/huggingface"
+    model_path = "IffYuan/Embodied-R1-3B-v1"
     reasoning_model = True
 
     max_pixels = 1605632

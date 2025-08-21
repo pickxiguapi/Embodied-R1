@@ -205,7 +205,7 @@ if __name__ == "__main__":
     huggingface_dataset_name = "nyu-visionx/CV-Bench"
     split = "test"
     model_name = "Embodied-R1-3B"
-    model_path = "/mnt/path/iffyuan/EasyR1/workdir/embodiedr1_qwen2_5_vl_3b_version_reward_v5_data_exp_date_0428_stage_1_qa/global_step_394/actor/huggingface"
+    model_path = "IffYuan/Embodied-R1-3B-v1"
     reasoning_model = True
     max_pixels = 1605632
     min_pixels = 256 * 28 * 28

@@ -278,7 +278,7 @@ def main(task_name, model_name, model_path, reasoning_model, max_pixels, min_pix
 
 if __name__ == "__main__":
     task_name = "RoboRefit"
-    huggingface_dataset_name = "/mnt/path/iffyuan/EasyR1/eval/roborefit_test.json"
+    huggingface_dataset_name = "roborefit_test.json"
     split = "test"
     disable_visualization = False
     use_flash_attention = False
@@ -294,7 +294,7 @@ if __name__ == "__main__":
     }
 
     model_name = "Embodied-R1-3B"
-    model_path = "/mnt/path/iffyuan/EasyR1/workdir/stage_2_point_rec_embodiedr1_qwen2_5_vl_3b_version_reward_v6_date_0503/global_step_784/actor/huggingface"
+    model_path = "IffYuan/Embodied-R1-3B-v1"
     reasoning_model = True
 
     vis_dir = f"logs/visualizations/{task_name}_{model_name}"

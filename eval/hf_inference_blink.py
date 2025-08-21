@@ -143,7 +143,7 @@ def main(task_name, model_name, model_path, reasoning_model, max_pixels, min_pix
         model_path,
         torch_dtype=torch.bfloat16,
         device_map=device_map,
-        attn_implementation="flash_attention_2",
+        attn_implementation=None,
     )
     
     processor = AutoProcessor.from_pretrained(model_path, max_pixels=max_pixels, min_pixels=min_pixels)
@@ -235,7 +235,7 @@ if __name__ == "__main__":
     subset = ["Multi-view_Reasoning", "Object_Localization", "Relative_Depth", "Spatial_Relation"]
 
     model_name = "Embodied-R1-3B"
-    model_path = "path/to/model"
+    model_path = "IffYuan/Embodied-R1-3B-v1"
     reasoning_model = True
 
     max_pixels = 2097152
