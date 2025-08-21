@@ -36,7 +36,7 @@ EXAMPLE = [
     {
         "image":"exsample_data/handal_090002.png",
         "text":"loosening stuck bolts",
-        "mode":"OAG"
+        "mode":"OFG"
     },
 ]
 
@@ -52,7 +52,7 @@ CONF_MODE = {
         ),
         "description": "Referring Expression Grounding - Locating the coordinates of specified object regions within an image."
     },
-    "OAG": {
+    "OFG": {
         "template": (
             "Please provide the 2D points coordinate of the region this sentence describes: {instruction}. "
             "The results are presented in a format <point>[[x1,y1], [x2,y2], ...]</point>. "
